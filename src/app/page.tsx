@@ -3,24 +3,14 @@ import { Button } from "@/components/ui/button";
 
 const dataSource = [
   {
-    env: "Dev",
-    side: "nodejs (server)",
-    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/_analyze/dev/nodejs.html",
-  },
-  {
-    env: "Dev",
-    side: "client (browser)",
-    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/_analyze/dev/client.html",
-  },
-  {
     env: "Build",
     side: "nodejs (server)",
-    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/_analyze/prod/nodejs.html",
+    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/analyze/nodejs.html",
   },
   {
     env: "Build",
     side: "client (browser)",
-    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/_analyze/prod/client.html",
+    link: "https://newerton.github.io/nextjs-shadcn-ui-bundle-analyzer/analyze/client.html",
   },
 ];
 

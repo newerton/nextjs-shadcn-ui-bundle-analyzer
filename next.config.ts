@@ -1,22 +1,18 @@
-import bundleAnalyzer from '@next/bundle-analyzer';
-import { NextConfig } from 'next';
+import withBundleAnalyzerInit from '@next/bundle-analyzer';
+import type { NextConfig } from 'next';
 
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: true,
+const withBundleAnalyzer = withBundleAnalyzerInit({
+  enabled: process.env.ANALYZE === 'true',
   openAnalyzer: false,
-  analyzerMode: 'static',
 });
-
-// Create basePath for GitHub pages
-const basePath = process.env.NODE_ENV !== 'development' ? '/nextjs-shadcn-ui-bundle-analyzer' : '';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath,
-  experimental: {
-    reactCompiler: true,
-  },
-}
+  reactCompiler: true,
+  basePath: process.env.PAGES_BASE_PATH || '',
+  assetPrefix: process.env.PAGES_BASE_PATH
+    ? `${process.env.PAGES_BASE_PATH}/`
+    : undefined,
+};
 
-module.exports = withBundleAnalyzer(nextConfig)
-
+export default withBundleAnalyzer(nextConfig);
